@@ -1,0 +1,11 @@
+version: "3"
+services:
+  app:
+    build: ./
+    tty: true
+    volumes:
+      - ./app:/app
+      - ./entrypoint.sh:/script/entrypoint.sh
+    ports:
+      - "3000:3000"
+    command: ["sh", "/script/entrypoint.sh"]
